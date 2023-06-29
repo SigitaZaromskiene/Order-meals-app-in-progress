@@ -1,6 +1,6 @@
 import Cart from "./Cart";
 import styles from "../css/Header.module.css";
-import { food } from "../img/food.jpg";
+import food from "../img/food.jpg";
 
 function Header() {
   return (
