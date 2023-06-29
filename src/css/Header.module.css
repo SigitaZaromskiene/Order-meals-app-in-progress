@@ -1,0 +1,16 @@
+.header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 900px;
+  padding: 15px;
+  width: 100%;
+  background-color: rgb(104, 26, 26);
+  height: 70px;
+}
+
+h2 {
+  font-size: 32px;
+  color: white;
+  margin: 0px;
+}
