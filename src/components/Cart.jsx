@@ -6,11 +6,15 @@ import { useContext } from "react";
 import { Global } from "./Global";
 
 function Cart() {
-  const { ordersNumber } = useContext(Global);
+  const { ordersNumber, setCartModal } = useContext(Global);
+
+  const cartModalOpenHandler = () => {
+    setCartModal(true);
+  };
 
   return (
     <>
-      <div className={styles.cart}>
+      <div className={styles.cart} onClick={cartModalOpenHandler}>
         <FontAwesomeIcon icon={faCartShopping} />
         <p>Your Cart</p>
         <p className={`${styles.number} ${ordersNumber && styles.change}`}>
