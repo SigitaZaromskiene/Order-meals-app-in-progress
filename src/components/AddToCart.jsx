@@ -6,16 +6,12 @@ import { Global } from "./Global";
 function AddToCart({ li, menu }) {
   const [inputNumber, setInputNumber] = useState(1);
 
-  const { order, setOrder } = useContext(Global);
-
-  console.log(li);
+  const { order, setOrder, setOrdersNumber } = useContext(Global);
 
   const amountHandler = () => {
-    const findMenu = () => {
-      menu.map((f) => f.id !== li.id);
-      return li;
-    };
-    console.log(findMenu);
+    const item = menu.filter((f) => f.id === li.id);
+    setOrder((li) => [...li, { item: item, quantity: Number(inputNumber) }]);
+    setOrdersNumber((n) => Number(n) + Number(inputNumber));
   };
 
   return (
@@ -34,7 +30,7 @@ function AddToCart({ li, menu }) {
           style={{ width: "40px", height: "20px", marginLeft: "10px" }}
         ></input>
       </div>
-      <Button text="Add"></Button>
+      <Button text="Add" action={amountHandler}></Button>
     </div>
   );
 }
