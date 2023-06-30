@@ -1,7 +1,9 @@
+import styles from "../css/MainArticle.module.css";
+
 function MainArticle() {
   return (
     <>
-      <div className="article">
+      <div className={styles["article-container"]}>
         <h3>Delicious Food, Delivered To You</h3>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas,
