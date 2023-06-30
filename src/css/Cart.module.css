@@ -15,11 +15,28 @@
 .number {
   background-color: rgb(137, 34, 34);
   border-radius: 50%;
-  padding: 5px;
+  padding: 8px;
   height: 22px;
   width: 22px;
   line-height: 22px;
   font-size: 20px;
   text-align: center;
   margin-left: 20px;
+}
+
+.change {
+  animation: changeSize;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes changeSize {
+  0% {
+    font-size: 10px;
+    color: black;
+  }
+  100% {
+    font-size: 20px;
+    color: white;
+  }
 }

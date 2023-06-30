@@ -9,7 +9,6 @@ const menu = [
     name: "Sushi",
     desc: "Finest fish and veggies",
     price: "22.99",
-    quantity: 0,
   },
   {
     id: uuidv4(),

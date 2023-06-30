@@ -6,17 +6,16 @@ import { useContext } from "react";
 import { Global } from "./Global";
 
 function Cart() {
-  const { ordersNumber, setOrdersNumber } = useContext(Global);
+  const { ordersNumber } = useContext(Global);
 
-  const orderNumberHandler = () => {
-    // setOrder((o) => o.quantity.reduce((acc, num) => acc + num), 0);
-  };
   return (
     <>
       <div className={styles.cart}>
         <FontAwesomeIcon icon={faCartShopping} />
         <p>Your Cart</p>
-        <p className={styles.number}>{ordersNumber}</p>
+        <p className={`${styles.number} ${ordersNumber && styles.change}`}>
+          {ordersNumber}
+        </p>
       </div>
     </>
   );

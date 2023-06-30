@@ -4,7 +4,7 @@ import { useState, useContext } from "react";
 import { Global } from "./Global";
 
 function AddToCart({ li, menu }) {
-  const [inputNumber, setInputNumber] = useState(1);
+  const [inputNumber, setInputNumber] = useState(0);
 
   const { order, setOrder, setOrdersNumber } = useContext(Global);
 
@@ -12,6 +12,7 @@ function AddToCart({ li, menu }) {
     const item = menu.filter((f) => f.id === li.id);
     setOrder((li) => [...li, { item: item, quantity: Number(inputNumber) }]);
     setOrdersNumber((n) => Number(n) + Number(inputNumber));
+    setInputNumber(0);
   };
 
   return (
