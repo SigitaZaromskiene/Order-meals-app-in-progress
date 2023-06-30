@@ -3,23 +3,21 @@ import AddToCart from "./AddToCart";
 import { Global } from "./Global";
 import { useContext } from "react";
 
-function CartModal() {
-  const { cartModal, order } = useContext(Global);
-
-  console.log(order);
-
-  if (cartModal === false) {
+function CartModal({ orderList }) {
+  if (orderList === null) {
     return "No order yet";
   }
   return (
     <>
-      {cartModal ? (
-        <div className={styles["list-modal"]} key={order.id}>
+      {orderList.map((li) => (
+        <div className={styles["list-modal"]} key={orderList.id}>
           <div className={styles["modal-container"]}>
             <div className={styles["container-left"]}>
-              <p className={styles.name}>rrr</p>
-              <p className={styles.price}>00</p>
-              <p className={styles.amount}></p>
+              <p className={styles.name}>{li.name}</p>
+              <p className={styles.price}>
+                {Math.floor(li.price).toFixed(2, 0)} &euro;
+              </p>
+              <p className={styles.amount}>{li.quantity}</p>
             </div>
             <div className={styles["container-right"]}>
               <button>+</button>
@@ -28,7 +26,7 @@ function CartModal() {
           </div>
           <div className={styles.border}></div>
         </div>
-      ) : null}
+      ))}
     </>
   );
 }
