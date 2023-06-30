@@ -1,4 +1,5 @@
 import "./App.css";
+import FoodList from "./components/FoodList";
 import Header from "./components/Header";
 import MainArticle from "./components/MainArticle";
 
@@ -8,6 +9,7 @@ function App() {
       <div className="content">
         <Header></Header>
         <MainArticle />
+        <FoodList />
       </div>
     </div>
   );
