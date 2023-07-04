@@ -11,7 +11,6 @@ const KEY = "MENUAPP";
 function App() {
   const [date, setDateNow] = useState(Date.now());
   const [order, setOrder] = useState(null);
-
   const [orderList, setOrderList] = useState(null);
 
   useEffect(() => {
@@ -23,14 +22,14 @@ function App() {
       return;
     }
     create(KEY, order);
+    setDateNow(Date.now());
   }, [order]);
 
-  console.log(orderList);
   return (
     <GlobalProvider>
       <div className="app-container">
         <div className="content">
-          <Header></Header>
+          <Header orderList={orderList} order={order}></Header>
           <MainArticle />
           <FoodList setOrder={setOrder} order={order} orderList={orderList} />
         </div>

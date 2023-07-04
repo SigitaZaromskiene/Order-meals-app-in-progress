@@ -8,15 +8,14 @@ function AddToCart({ li, menu, setOrder, order }) {
 
   const { setOrdersNumber } = useContext(Global);
 
-  console.log(order);
-
   const amountHandler = () => {
     const item = menu.filter((f) => f.id === li.id);
 
     setOrder({
-      name: item.name,
+      name: item[0].name,
       quantity: Number(inputNumber),
-      price: Number(item.price) * Number(inputNumber),
+      price: Number(item[0].price),
+      priceTotal: Number(item[0].price) * Number(inputNumber),
     });
     setOrdersNumber((n) => Number(n) + Number(inputNumber));
     setInputNumber(0);

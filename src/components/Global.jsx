@@ -5,6 +5,8 @@ export const Global = createContext();
 export const GlobalProvider = ({ children }) => {
   const [ordersNumber, setOrdersNumber] = useState(0);
   const [cartModal, setCartModal] = useState(false);
+  const [orderDetails, setOrderDetails] = useState(null);
+  const [errorModal, setErrorModal] = useState(true);
 
   return (
     <Global.Provider
@@ -13,6 +15,9 @@ export const GlobalProvider = ({ children }) => {
         setOrdersNumber,
         cartModal,
         setCartModal,
+        setOrderDetails,
+        setErrorModal,
+        errorModal,
       }}
     >
       {children}

@@ -20,6 +20,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
 }
 
 .container-left {
@@ -32,12 +33,19 @@
 .name,
 .amount {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 16px;
 }
 
 .price {
   color: darkred;
   font-weight: 600;
+  font-size: 14px;
+}
+
+.total-price {
+  color: darkred;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .container-right {

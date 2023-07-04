@@ -37,8 +37,8 @@ function FoodList({ setOrder, order, orderList }) {
   return (
     <div className={styles["list-container"]}>
       {menu.map((li) => (
-        <>
-          <div key={li.id}>
+        <div div key={li.id}>
+          <div>
             <div className={styles.lists}>
               <div className={styles["container-left"]}>
                 <p className={styles.name}>{li.name}</p>
@@ -57,7 +57,7 @@ function FoodList({ setOrder, order, orderList }) {
           {cartModal ? (
             <CartModal li={li} orderList={orderList}></CartModal>
           ) : null}
-        </>
+        </div>
       ))}
     </div>
   );
