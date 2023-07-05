@@ -47,3 +47,27 @@ p {
   padding: 10px;
   margin-bottom: 20px;
 }
+
+@media (max-width: 1130px) {
+  .list-container {
+    width: 700px;
+  }
+}
+
+@media (max-width: 830px) {
+  .list-container {
+    width: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .list-container {
+    width: 400px;
+  }
+}
+
+@media (max-width: 510px) {
+  .list-container {
+    width: 300px;
+  }
+}

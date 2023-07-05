@@ -73,3 +73,9 @@ button {
   font-size: 18px;
   cursor: pointer;
 }
+
+@media (max-width: 620px) {
+  .modal-container {
+    width: 350px;
+  }
+}

@@ -9,7 +9,8 @@ import SetOrderListContext from "./SetOrderListContext";
 import ButtonMinusOne from "./ButtonMinusOne";
 
 function CartModal({ orderList, setOrderList, li }) {
-  const { setCartModal, setOrderDetails, errorModal } = useContext(Global);
+  const { setCartModal, setOrderDetails, errorModal, cartModal } =
+    useContext(Global);
 
   const totalAmountHandler = () => {
     const total = orderList
@@ -54,7 +55,7 @@ function CartModal({ orderList, setOrderList, li }) {
               ></div>
             </div>
           ))}
-          {errorModal ? (
+          {orderList.length === 0 && errorModal ? (
             <ErrorMsg />
           ) : (
             <div

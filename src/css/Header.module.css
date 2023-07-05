@@ -19,3 +19,17 @@ img {
   width: 100vw;
   background-size: cover;
 }
+
+@media (max-width: 830px) {
+  img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-content {
+    flex-direction: column;
+    gap: 20px;
+    height: 120px;
+  }
+}

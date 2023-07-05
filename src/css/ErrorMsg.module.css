@@ -27,3 +27,9 @@
 .p {
   font-size: 24px;
 }
+
+@media (max-width: 620px) {
+  .modal-container {
+    width: 350px;
+  }
+}
