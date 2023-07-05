@@ -5,7 +5,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import { Global } from "./Global";
 
-function Cart({ orderList, setOrderList }) {
+function Cart({ orderList }) {
   const { ordersNumber, setCartModal } = useContext(Global);
 
   const setOrdersNumberHandler = () => {

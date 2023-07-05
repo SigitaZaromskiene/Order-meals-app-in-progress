@@ -4,9 +4,16 @@ import { useState, useContext } from "react";
 import { Global } from "./Global";
 
 function AddToCart({ li, menu, setOrder }) {
-  const [inputNumber, setInputNumber] = useState(0);
+  const [inputNumber, setInputNumber] = useState("");
 
   const { setOrdersNumber } = useContext(Global);
+
+  const inputAmountHandler = (e) => {
+    if (e.target.value <= 0) {
+      return 0;
+    }
+    setInputNumber(e.target.value);
+  };
 
   const amountHandler = () => {
     const item = menu.filter((f) => f.id === li.id);
@@ -33,7 +40,7 @@ function AddToCart({ li, menu, setOrder }) {
           max="50"
           type="number"
           value={inputNumber}
-          onChange={(e) => setInputNumber(e.target.value)}
+          onChange={inputAmountHandler}
           style={{ width: "40px", height: "20px", marginLeft: "10px" }}
         ></input>
       </div>

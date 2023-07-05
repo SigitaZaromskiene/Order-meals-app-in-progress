@@ -3,14 +3,16 @@ import { Global } from "./Global";
 import SetOrderListContext from "./SetOrderListContext";
 
 function ButtonMinusOne({ li }) {
-  const { setCartModal } = useContext(Global);
   const { setEditedOrder } = useContext(SetOrderListContext);
 
   const minusOneHandler = () => {
     setEditedOrder({
-      quantity: Number(li.quantity) - 1,
+      quantity: li.quantity <= 0 ? 0 : Number(li.quantity) - 1,
       id: li.id,
-      priceTotal: Number(li.price) * Number(li.quantity - 1),
+      priceTotal:
+        Number(li.price) * Number(li.quantity - 1) <= 0
+          ? null
+          : Number(li.price) * Number(li.quantity - 1),
     });
   };
 

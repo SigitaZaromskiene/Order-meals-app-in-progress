@@ -3,7 +3,6 @@ import { Global } from "./Global";
 import SetOrderListContext from "./SetOrderListContext";
 
 function ButtonModallAdd({ li }) {
-  const { setCartModal } = useContext(Global);
   const { setEditedOrder } = useContext(SetOrderListContext);
 
   const addOneHandler = () => {
