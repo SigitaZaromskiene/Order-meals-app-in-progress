@@ -4,15 +4,12 @@ import { Global } from "./Global";
 
 function ErrorMsg() {
   const { setErrorModal } = useContext(Global);
-  const setErrorMsg = () => {
-    setErrorModal(false);
-  };
 
   return (
     <div className={styles["list-modal"]}>
       <div className={styles["modal-container"]}>
         <p className={styles.p}>No orders yet</p>
-        <button onClick={setErrorMsg}>Okay</button>
+        <button onClick={() => setErrorModal(false)}>Okay</button>
       </div>
     </div>
   );

@@ -14,15 +14,16 @@ function CartModal({ orderList, setOrderList, li }) {
   const { setEditedOrder, editedOrder } = useContext(SetOrderListContext);
 
   const totalAmountHandler = () => {
+    console.log(orderList);
     const total = orderList
       .map((li) => li.priceTotal)
       .reduce((li, acc) => li + acc, 0);
-    return total;
+    return total.toFixed(2, 0);
   };
 
   return (
     <>
-      <div className={styles["list-modal"]} onClick={() => setCartModal(null)}>
+      <div className={styles["list-modal"]}>
         <div className={styles["modal-container"]}>
           {orderList.map((li) => (
             <div

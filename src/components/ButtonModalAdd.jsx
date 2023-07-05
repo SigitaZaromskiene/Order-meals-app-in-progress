@@ -10,8 +10,8 @@ function ButtonModallAdd({ li }) {
     setEditedOrder({
       quantity: Number(li.quantity) + 1,
       id: li.id,
+      priceTotal: Number(li.price) * Number(li.quantity + 1),
     });
-    setCartModal(true);
   };
 
   return <button onClick={addOneHandler}>+</button>;

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Global } from "./Global";
 import SetOrderListContext from "./SetOrderListContext";
 
@@ -10,8 +10,8 @@ function ButtonMinusOne({ li }) {
     setEditedOrder({
       quantity: Number(li.quantity) - 1,
       id: li.id,
+      priceTotal: Number(li.price) * Number(li.quantity - 1),
     });
-    setCartModal(true);
   };
 
   return <button onClick={minusOneHandler}>-</button>;
