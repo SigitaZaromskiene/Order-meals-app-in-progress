@@ -1,3 +1,18 @@
+## 🌟 About
+
+This project is for educational porpuses only. 
+Project still in progress.
+
+
+## 🎯 Project features/goals
+
+-   Learning CRUD and using localStorage
+-   Using useContext, useState, useEffect
+-   Using controlled forms
+-   Media queries
+-   CSS using modules
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
