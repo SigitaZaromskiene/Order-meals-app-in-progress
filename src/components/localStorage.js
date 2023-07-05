@@ -19,3 +19,12 @@ export const create = (key, data) => {
   allData.push(data);
   write(key, allData);
 };
+
+export const edit = (key, data, id) => {
+  const allData = read(key);
+  const edited = allData.map((d) =>
+    d.id === id ? { ...d, ...data, id: id } : { ...d }
+  );
+
+  write(key, edited);
+};

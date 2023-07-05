@@ -3,7 +3,7 @@ import Button from "./Button";
 import { useState, useContext } from "react";
 import { Global } from "./Global";
 
-function AddToCart({ li, menu, setOrder, order }) {
+function AddToCart({ li, menu, setOrder }) {
   const [inputNumber, setInputNumber] = useState(0);
 
   const { setOrdersNumber } = useContext(Global);
@@ -14,7 +14,7 @@ function AddToCart({ li, menu, setOrder, order }) {
     setOrder({
       name: item[0].name,
       quantity: Number(inputNumber),
-      price: Number(item[0].price),
+      price: Number(item[0].price).toFixed(2, 0),
       priceTotal: Number(item[0].price) * Number(inputNumber),
     });
     setOrdersNumber((n) => Number(n) + Number(inputNumber));

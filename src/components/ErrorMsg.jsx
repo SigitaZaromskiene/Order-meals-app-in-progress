@@ -11,9 +11,9 @@ function ErrorMsg() {
   return (
     <div className={styles["list-modal"]}>
       <div className={styles["modal-container"]}>
-        <p>No orders yet</p>
+        <p className={styles.p}>No orders yet</p>
+        <button onClick={setErrorMsg}>Okay</button>
       </div>
-      <button onClick={setErrorMsg}>Okay</button>
     </div>
   );
 }

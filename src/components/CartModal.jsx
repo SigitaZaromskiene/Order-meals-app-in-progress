@@ -1,13 +1,17 @@
 import styles from "../css/CartModal.module.css";
 import AddToCart from "./AddToCart";
 import { Global } from "./Global";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Button from "./Button";
 import ErrorMsg from "./ErrorMsg";
+import ButtonModallAdd from "./ButtonModalAdd";
+import SetOrderListContext from "./SetOrderListContext";
+import ButtonMinusOne from "./ButtonMinusOne";
 
-function CartModal({ orderList }) {
-  console.log(orderList);
+function CartModal({ orderList, setOrderList, li }) {
   const { setCartModal, setOrderDetails } = useContext(Global);
+
+  const { setEditedOrder, editedOrder } = useContext(SetOrderListContext);
 
   const totalAmountHandler = () => {
     const total = orderList
@@ -40,8 +44,8 @@ function CartModal({ orderList }) {
                   <p className={styles.amount}>Quantity: {li.quantity}</p>
                 </div>
                 <div className={styles["container-right"]}>
-                  <button>+</button>
-                  <button>-</button>
+                  <ButtonModallAdd li={li} />
+                  <ButtonMinusOne li={li} />
                 </div>
               </div>
               <div
@@ -83,7 +87,7 @@ function CartModal({ orderList }) {
               width: "100%",
             }}
           >
-            <Button text="Close" action={() => setCartModal(null)}></Button>
+            <Button text="Close" action={() => setCartModal(false)}></Button>
             <Button
               text="Order"
               action={() => setOrderDetails(console.log("Ordering...."))}
@@ -91,7 +95,6 @@ function CartModal({ orderList }) {
           </div>
         </div>
       </div>
-      )}
     </>
   );
 }
